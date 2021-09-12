@@ -185,6 +185,22 @@ function xmldb_lti_upgrade($oldversion) {
 
     // Automatically generated Moodle v3.11.0 release upgrade line.
     // Put any upgrade step following this.
+    
+    // Module for SAGAH
+    if ($oldversion < 2020061501) {
+
+        // Changing type of field subject on table lti to text.
+        $table = new xmldb_table('lti');
+        $field = new xmldb_field('subject', XMLDB_TYPE_CHAR, '255', null, null, null, null, 'course');
+
+        // Conditionally launch add field clientid.
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        // Lti savepoint reached.
+        upgrade_mod_savepoint(true, 2020061501, 'lti');
+    }
 
     return true;
 }

@@ -840,6 +840,13 @@ function lti_build_request($instance, $typeconfig, $course, $typeid = null, $isl
     if (empty($instance->cmid)) {
         $instance->cmid = 0;
     }
+    
+    // Module SAGAH - check if the name of the course exists, if it doesn't, consider the name of the course
+    if(!empty($instance->subject)){
+        $subjectparams = $instance->subject;
+    } else {
+        $subjectparams = $course->fullname;
+    }
 
     $role = lti_get_ims_role($USER, $instance->cmid, $instance->course, $islti2);
 
@@ -849,7 +856,7 @@ function lti_build_request($instance, $typeconfig, $course, $typeid = null, $isl
         'roles' => $role,
         'context_id' => $course->id,
         'context_label' => trim(html_to_text($course->shortname, 0)),
-        'context_title' => trim(html_to_text($course->fullname, 0)),
+        'context_title' => trim(html_to_text($subjectparams, 0)),
     );
     if (!empty($instance->name)) {
         $requestparams['resource_link_title'] = trim(html_to_text($instance->name, 0));

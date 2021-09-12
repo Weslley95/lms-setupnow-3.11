@@ -612,3 +612,6 @@ If this field is left blank, the host name of this Moodle site will be used as t
 $string['contentitem'] = 'Content-Item Message';
 $string['contentitem_help'] = 'If ticked, the option \'Select content\' will be available when adding an external tool.';
 
+// Module for SAGAH
+$string['subject'] = 'Subject SAGAH';
+$string['subject_help'] = 'If you use SAGAH subjects, use this field to specify the subject that contains the learning unit to be used.';

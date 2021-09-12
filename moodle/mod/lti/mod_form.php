@@ -83,6 +83,11 @@ class mod_lti_mod_form extends moodleform_mod {
         // Adding the "general" fieldset, where all the common settings are shown.
         $mform->addElement('html', "<div data-attribute='dynamic-import' hidden aria-hidden='true' role='alert'></div>");
         $mform->addElement('header', 'general', get_string('general', 'form'));
+        
+        // Adding the standard "subject" (SAGAH) field.
+        $mform->addElement('text', 'subject', get_string('subject', 'lti'), array('size' => '64'));
+        $mform->setType('subject', PARAM_TEXT);
+        $mform->addHelpButton('subject', 'subject', 'lti');
 
         // Adding the standard "name" field.
         $mform->addElement('text', 'name', get_string('basicltiname', 'lti'), array('size' => '64'));
