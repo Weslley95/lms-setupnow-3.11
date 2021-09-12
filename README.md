@@ -1,7 +1,7 @@
 <p align="center">
   <a href="http://lms.setupnow.com.br">
-    <img alt="Setup Now" src="https://img.shields.io/badge/Feito%20por-Setup%20Now-%237519C1">
-    <img alt="Setup Now" src="https://img.shields.io/badge/Acessar-%237519C1">
+    <img alt="Setup Now" src="https://img.shields.io/badge/Feito%20por-Setup%20Now-%237519C1" target="_blank">
+    <img alt="Setup Now" src="https://img.shields.io/badge/Acessar-%237519C1" target="_blank">
   </a>
  
 </p>
