@@ -106,7 +106,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 📝 Licença
 
-Este projeto esta sobe a licença [GNU](./Moodle/COPYING.txt).
+Este projeto esta sobe a licença [GNU](https://github.com/Weslley95/lms_setupnow_3.11/blob/master/moodle/COPYING.txt).
 
 👋🏽 [Entre em contato!](https://www.linkedin.com/in/weslley-bezerra-451576125/)
 
