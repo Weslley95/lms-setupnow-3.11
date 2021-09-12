@@ -1,3 +1,4 @@
+/* Module modify H5P JS */
 console.log("Hello, this is custom.js!");
 (function ($) {
   $(document).ready(function () {

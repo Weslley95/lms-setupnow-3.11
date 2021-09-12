@@ -19,7 +19,7 @@
  * This page prints a particular instance
  *
  * @package extender for h5p and hvp editing
- * @copyright  2021
+ * @copyright  2021 Weslley
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or late
  **/
 
