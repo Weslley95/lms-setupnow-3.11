@@ -1,11 +1,12 @@
 <p align="center">
   <a href="http://lms.setupnow.com.br">
-    <img alt="Setup Now" src="https://img.shields.io/badge/Feito%20por-SetupNow-%237519C1">
+    <img alt="Setup Now" src="https://img.shields.io/badge/Feito%20por-Setup%20Now-%237519C1">
+    <img alt="Setup Now" src="https://img.shields.io/badge/Acessar-%237519C1">
   </a>
  
 </p>
 <h1 align="center">
-    <a href="https://setupnow.com.br" target="_blank">
+    <a href="https:/lms.setupnow.com.br" target="_blank">
     <img alt="Setup Now" title="#NextLevelWeek" src="./assets/logo_setupnow.png" width="300px"/>
     </a>
 </h1>
@@ -45,11 +46,15 @@
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+<a href="https:/lms.setupnow.com.br" target="_blank">
   <img alt="NextLevelWeek" title="#Home Setup Now" src="./assets/home_lms_setupnow.PNG" width="700px">
+</a>
 </p>
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+<a href="https:/lms.setupnow.com.br" target="_blank">
   <img alt="NextLevelWeek" title="#Home Setup Now" src="./assets/scroll_lms_setupnow.PNG" width="700px">
+	</a>
 </p>
 
 ---
