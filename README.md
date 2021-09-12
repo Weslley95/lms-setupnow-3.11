@@ -6,22 +6,13 @@
 </p>
 <h1 align="center">
     <a href="https://setupnow.com.br" target="_blank">
-    <img alt="Setup Now" title="#NextLevelWeek" src="./assets/logo_setupnow.png" />
+    <img alt="Setup Now" title="#NextLevelWeek" src="./assets/logo_setupnow.png" width="300px"/>
     </a>
 </h1>
 
 <h4 align="center"> 
 	🚧  Learning Managemente System 🚧
 </h4>
-
-<p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-layout">Layout</a> • 
- <a href="#-Algumas-ferramentas-nessárias-para-o-desenvolvimento">Algumas ferramentas nessárias para o desenvolvimento</a> • 
- <a href="#-tecnologias">Tecnologias</a> •  
- <a href="#user-content--licença">Licença</a>
-</p>
 
 ## 💻 Sobre o projeto
 
@@ -70,11 +61,11 @@
 ### Pré-requisitos
 
 Ao utilizar este software, será preciso executá-lo em um ambiente linux ou até mesmo no Windows utilizando ferramentas como VirtualBox ou utilizando Xampp/WampServer, uma configuração com banco de dados, abaixo ferramentas essenciais para o desenvolvimento:
-[Git](https://git-scm.com)
-[Apache NetBeans](https://netbeans.apache.org/download/index.html)
-[Xampp](https://www.apachefriends.org/pt_br/index.html)
-[WampServer](https://www.wampserver.com/en/)
-[VirtualBox](https://www.virtualbox.org/)
+- [Git](https://git-scm.com)
+- [Apache NetBeans](https://netbeans.apache.org/download/index.html)
+- [Xampp](https://www.apachefriends.org/pt_br/index.html)
+- [WampServer](https://www.wampserver.com/en/)
+- [VirtualBox](https://www.virtualbox.org/)
 
 ---
 
@@ -117,6 +108,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Este projeto esta sobe a licença [GNU](./Moodle/COPYING.txt).
 
-Feito por Weslley 👋🏽 [Entre em contato!](https://www.linkedin.com/in/weslley-bezerra-451576125/)
+👋🏽 [Entre em contato!](https://www.linkedin.com/in/weslley-bezerra-451576125/)
 
 ---
