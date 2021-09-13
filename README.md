@@ -12,7 +12,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧  Learning Managemente System 🚧
+	🚧  Learning Management System 🚧
 </h4>
 
 ## 💻 Sobre o projeto
