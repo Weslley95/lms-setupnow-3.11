@@ -51,75 +51,90 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * Define the complete assignment structure for backup, with file and id annotations
  */
-class backup_lti_activity_structure_step extends backup_activity_structure_step {
+class backup_lti_activity_structure_step extends backup_activity_structure_step
+{
 
     /**
      * Defines structure of activity backup
      * @return backup_nested_element
      */
-    protected function define_structure() {
+    protected function define_structure()
+    {
         global $DB;
 
         // To know if we are including userinfo.
         $userinfo = $this->get_setting_value('userinfo');
 
         // Define each element separated.
-        $lti = new backup_nested_element('lti', array('id'), array(
-            'name',
-            'intro',
-            'introformat',
-            'timecreated',
-            'timemodified',
-            'typeid',
-            'toolurl',
-            'securetoolurl',
-            'preferheight',
-            'launchcontainer',
-            'instructorchoicesendname',
-            'instructorchoicesendemailaddr',
-            'instructorchoiceacceptgrades',
-            'instructorchoiceallowroster',
-            'instructorchoiceallowsetting',
-            'grade',
-            'instructorcustomparameters',
-            'debuglaunch',
-            'showtitlelaunch',
-            'showdescriptionlaunch',
-            'icon',
-            'secureicon',
-            new encrypted_final_element('resourcekey'),
-            new encrypted_final_element('password'),
+        $lti = new backup_nested_element(
+            'lti',
+            array('id'),
+            array(
+                'subject',
+                'name',
+                'intro',
+                'introformat',
+                'timecreated',
+                'timemodified',
+                'typeid',
+                'toolurl',
+                'securetoolurl',
+                'preferheight',
+                'launchcontainer',
+                'instructorchoicesendname',
+                'instructorchoicesendemailaddr',
+                'instructorchoiceacceptgrades',
+                'instructorchoiceallowroster',
+                'instructorchoiceallowsetting',
+                'grade',
+                'instructorcustomparameters',
+                'debuglaunch',
+                'showtitlelaunch',
+                'showdescriptionlaunch',
+                'icon',
+                'secureicon',
+                new encrypted_final_element('resourcekey'),
+                new encrypted_final_element('password'),
             )
         );
 
-        $ltitype = new backup_nested_element('ltitype', array('id'), array(
-            'name',
-            'baseurl',
-            'tooldomain',
-            'state',
-            'course',
-            'coursevisible',
-            'ltiversion',
-            'clientid',
-            'toolproxyid',
-            'enabledcapability',
-            'parameter',
-            'icon',
-            'secureicon',
-            'createdby',
-            'timecreated',
-            'timemodified',
-            'description'
+        $ltitype = new backup_nested_element(
+            'ltitype',
+            array('id'),
+            array(
+                'name',
+                'baseurl',
+                'tooldomain',
+                'state',
+                'course',
+                'coursevisible',
+                'ltiversion',
+                'clientid',
+                'toolproxyid',
+                'enabledcapability',
+                'parameter',
+                'icon',
+                'secureicon',
+                'createdby',
+                'timecreated',
+                'timemodified',
+                'description'
             )
         );
 
         $ltitypesconfigs = new backup_nested_element('ltitypesconfigs');
-        $ltitypesconfig  = new backup_nested_element('ltitypesconfig', array('id'), array(
+        $ltitypesconfig  = new backup_nested_element(
+            'ltitypesconfig',
+            array('id'),
+            array(
                 'name',
                 'value',
             )
         );
-        $ltitypesconfigencrypted  = new backup_nested_element('ltitypesconfigencrypted', array('id'), array(
+        $ltitypesconfigencrypted  = new backup_nested_element(
+            'ltitypesconfigencrypted',
+            array('id'),
+            array(
                 'name',
                 new encrypted_final_element('value'),
             )
@@ -128,7 +143,10 @@ class backup_lti_activity_structure_step extends backup_activity_structure_step 
         $ltitoolproxy = new backup_nested_element('ltitoolproxy', array('id'));
 
         $ltitoolsettings = new backup_nested_element('ltitoolsettings');
-        $ltitoolsetting  = new backup_nested_element('ltitoolsetting', array('id'), array(
+        $ltitoolsetting  = new backup_nested_element(
+            'ltitoolsetting',
+            array('id'),
+            array(
                 'settings',
                 'timecreated',
                 'timemodified',
@@ -166,9 +184,11 @@ class backup_lti_activity_structure_step extends backup_activity_structure_step 
 
         if (isset($ltitypedata->baseurl)) {
             // Add type config values only if the type was backed up. Encrypt password and resourcekey.
-            $params = [backup_helper::is_sqlparam($ltitypedata->id),
+            $params = [
+                backup_helper::is_sqlparam($ltitypedata->id),
                 backup_helper::is_sqlparam('password'),
-                backup_helper::is_sqlparam('resourcekey')];
+                backup_helper::is_sqlparam('resourcekey')
+            ];
             $ltitypesconfig->set_source_sql("SELECT id, name, value
                 FROM {lti_types_config}
                 WHERE typeid = ? AND name <> ? AND name <> ?", $params);
@@ -180,10 +200,12 @@ class backup_lti_activity_structure_step extends backup_activity_structure_step 
         if (!empty($ltitypedata->toolproxyid)) {
             // If this is LTI 2 tool add settings for the current activity.
             $ltitoolproxy->set_source_array([['id' => $ltitypedata->toolproxyid]]);
-            $ltitoolsetting->set_source_sql("SELECT *
+            $ltitoolsetting->set_source_sql(
+                "SELECT *
                 FROM {lti_tool_settings}
                 WHERE toolproxyid = ? AND course = ? AND coursemoduleid = ?",
-                [backup_helper::is_sqlparam($ltitypedata->toolproxyid), backup::VAR_COURSEID, backup::VAR_MODID]);
+                [backup_helper::is_sqlparam($ltitypedata->toolproxyid), backup::VAR_COURSEID, backup::VAR_MODID]
+            );
         } else {
             $ltitoolproxy->set_source_array([]);
         }
@@ -218,7 +240,8 @@ class backup_lti_activity_structure_step extends backup_activity_structure_step 
      * @param stdClass $ltirecord record from {lti} table
      * @return stdClass|null
      */
-    protected function retrieve_lti_type($ltirecord) {
+    protected function retrieve_lti_type($ltirecord)
+    {
         global $DB;
         if (!$ltirecord->typeid) {
             return null;
